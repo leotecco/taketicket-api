@@ -1,4 +1,4 @@
-const Event = require("../app/models/event");
+const Event = require("./../models/event");
 
 exports.post = async ({ person, ...data }) => {
   const event = new Event({ ...data, person: person.id });

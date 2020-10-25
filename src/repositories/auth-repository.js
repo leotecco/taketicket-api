@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken")
-const Person = require("../app/models/person")
+const Person = require("./../models/person")
 
 exports.register = async (data) => {
   const hasPerson = await Person.findOne({ email: data.email })
@@ -53,5 +53,18 @@ exports.login = async (data) => {
       type: person.type,
     },
     token: jwt.sign({ id: person.id }, process.env.SECRET, { expiresIn: 86400 }),
+  }
+}
+
+exports.me = async (id) => {
+  const person = await Person.findOne({ _id: id })
+
+  return {
+    id: person.id,
+    email: person.email,
+    cpf: person.cpf,
+    cnpj: person.cnpj,
+    fantasyName: person.fantasyName,
+    type: person.type,
   }
 }

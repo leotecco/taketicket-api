@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
@@ -10,8 +10,8 @@ const eventSchema = new Schema({
   number: { type: String, required: true },
   person: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Person",
+    ref: 'Person',
   },
 });
 
-module.exports = mongoose.model("Event", eventSchema);
+module.exports = mongoose.model('Event', eventSchema);
