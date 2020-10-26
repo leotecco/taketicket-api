@@ -13,7 +13,6 @@ exports.register = async (req, res) => {
 
     res.status(400).json({ message: 'Já cadastrado!' });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ message: 'Erro ao cadastrar!', error });
   }
 };
@@ -49,8 +48,6 @@ exports.me = async (req, res) => {
         person,
       });
   } catch (error) {
-    console.log(error)
-
     res.status(500).json({ message: 'Erro ao consultar dados!', error });
   }
 }
