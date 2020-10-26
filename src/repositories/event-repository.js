@@ -1,20 +1,47 @@
-const Event = require("./../models/event");
+const Event = require('./../models/event')
+const s3 = require('./../services/s3-service')
+const path = require('path')
+const mime = require('mime-types')
 
-exports.post = async ({ person, ...data }) => {
-  const event = new Event({ ...data, person: person.id });
+exports.post = async ({ person, image, ...data }) => {
+  const event = new Event({ ...data, person: person.id })
 
-  return event.save();
-};
+  const imageS3 = await new Promise((resolve, reject) => {
+    if (!image) {
+      resolve(null)
+      return
+    }
+
+    s3.upload({
+      Bucket: 'taketicket',
+      Body: image.buffer,
+      Key: `events/${parseInt(Math.random() * 1000000)}${Date.now()}${path.extname(image.originalname)}`,
+      ContentType: mime.lookup(image.originalname),
+      ACL: 'public-read',
+    }, (error, data) => {
+      if (error) {
+        reject(error)
+        return
+      }
+
+      resolve(data)
+    })
+  })
+
+  event.image = imageS3 ? imageS3.Location : null
+
+  return event.save()
+}
 
 exports.getAll = async ({ person }) => {
-  const events = Event.find({ person: person.id }).populate('person');
+  const events = Event.find({ person: person.id }).populate('person')
 
-  return events;
-};
+  return events
+}
 
 exports.getById = async ({ id, person }) => {
-  return Event.findOne({ _id: id, person: person.id });
-};
+  return Event.findOne({ _id: id, person: person.id })
+}
 
 exports.put = async (id, data) => {
   return Event.findByIdAndUpdate(
@@ -23,9 +50,9 @@ exports.put = async (id, data) => {
       $set: data,
     },
     { new: true }
-  );
-};
+  )
+}
 
 exports.delete = async (id) => {
-  return Event.findByIdAndRemove(id);
-};
+  return Event.findByIdAndRemove(id)
+}

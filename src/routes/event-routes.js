@@ -1,9 +1,11 @@
 const express = require("express");
+const multer  = require('multer')
 const router = express.Router();
 const eventController = require("./../controller/event-controller");
 const ticketRoutes = require("./ticket-routes");
+const upload = multer()
 
-router.post("/", eventController.post);
+router.post("/", upload.single('image'), eventController.post);
 
 router.get("/", eventController.getAll);
 
