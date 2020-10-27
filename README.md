@@ -38,9 +38,7 @@ Por último são descritas as demandas e os problemas que foram resolvidos para 
 
 | Requisitos    | Ferramentas   |
 |---------------|---------------|
-| Navegadores   | Google Chrome, Mozilla Firefox, Opera, Safari, Microsoft Edge e Internet Explorer 9+.     |
 | Sistemas Operacionais | UNIX, Mac OS X, Windows. |
-| Tamanhos de tela | Mobile (até 720px). |
 
 ## Tecnologias
 
