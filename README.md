@@ -43,7 +43,7 @@ Por último são descritas as demandas e os problemas que foram resolvidos para 
 ## Tecnologias
 
 | Tecnologia   | Descrição |
-|:-------------:|-----------|
+|-------------|-----------|
 | NodeJS | Plataforma para ambiente back-end em Javascript (https://nodejs.org/en/) |
 | MongoDB | Banco de dados NoSQL (https://www.mongodb.com/) |
 | ExpressJS | Framework para roteamento (https://expressjs.com/pt-br/) |
