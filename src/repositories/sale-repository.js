@@ -11,7 +11,13 @@ exports.post = async ({ buyer, ticket, quantity }) => {
 
     await sale.save()
     await sale
-      .populate('ticket')
+      .populate({
+        path: 'ticket',
+        populate: {
+          path: 'event',
+          model: 'Event'
+        }
+      })
       .populate('buyer', '_id name cpf cnpj fantasyName type')
       .execPopulate()
 
