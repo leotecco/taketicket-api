@@ -20,3 +20,16 @@ exports.post = async ({ buyer, ticket, quantity }) => {
 
   return sales
 }
+
+exports.check = async ({ identification }) => {
+  const sale = await Sale.findOne({ identification })
+
+  if (sale) {
+    await sale
+      .populate('ticket')
+      .populate('buyer', '_id name cpf cnpj fantasyName type')
+      .execPopulate()
+  }
+
+  return sale
+}
