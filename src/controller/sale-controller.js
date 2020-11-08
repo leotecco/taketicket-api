@@ -8,11 +8,9 @@ exports.post = async (req, res) => {
       quantity: req.body.quantity || 1
     })
 
-    if (data) {
-      res
-        .status(201)
-        .json({ message: 'Ingresso comprado com sucesso!', sale })
-    }
+    res
+      .status(201)
+      .json({ message: 'Ingresso comprado com sucesso!', sale })
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Erro ao comprar ingresso!', error })

@@ -16,6 +16,7 @@ const authService = require('./src/services/auth-service')
 const indexRoute = require('./src/routes/index-routes')
 const eventRoutes = require('./src/routes/event-routes')
 const saleRoutes = require('./src/routes/sale-routes')
+const purchaseRoutes = require('./src/routes/purchase-routes')
 const publicEventRoutes = require('./src/routes/public-event-routes')
 const authRoutes = require('./src/routes/auth-routes')
 
@@ -41,6 +42,7 @@ app.use('/v1', indexRoute)
 app.use('/v1/auth', authRoutes)
 app.use('/v1/events', authService, eventRoutes)
 app.use('/v1/sales', authService, saleRoutes)
+app.use('/v1/purchases', authService, purchaseRoutes)
 app.use('/v1/public-events', publicEventRoutes)
 
 app.listen(PORT, () => {
