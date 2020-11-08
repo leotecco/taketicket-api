@@ -15,6 +15,7 @@ dotenvSafe.config()
 const authService = require('./src/services/auth-service')
 const indexRoute = require('./src/routes/index-routes')
 const eventRoutes = require('./src/routes/event-routes')
+const saleRoutes = require('./src/routes/sale-routes')
 const authRoutes = require('./src/routes/auth-routes')
 
 mongoose.connect(
@@ -39,6 +40,7 @@ app.use(bodyParser.json())
 app.use('/v1', indexRoute)
 app.use('/v1/auth', authRoutes)
 app.use('/v1/events', authService, eventRoutes)
+app.use('/v1/sales', authService, saleRoutes)
 
 app.listen(PORT, () => {
   console.log('================')

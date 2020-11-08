@@ -1,6 +1,5 @@
 const Ticket = require('./../models/ticket')
 
-
 exports.post = async ({ event, ...data }) => {
   const ticket = new Ticket({ ...data, event })
 
