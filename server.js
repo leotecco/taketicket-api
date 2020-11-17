@@ -44,8 +44,8 @@ app.use('/v1/purchases', authService, purchaseRoutes)
 app.use('/v1/public-events', publicEventRoutes)
 
 app.listen(PORT, () => {
-  console.log('================================')
+  console.log('================')
   console.log('SERVER ON')
   console.log('PORT:', PORT)
-  console.log('================================')
+  console.log('================')
 })
