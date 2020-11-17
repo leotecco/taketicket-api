@@ -34,6 +34,10 @@ Por último são descritas as demandas e os problemas que foram resolvidos para 
 - Listagem de compras dos participantes
 - Validação de QRCode
 
+### Funcionalidades não concluídas
+
+- Geração de dados estatísticos - NÃO INICIADO
+
 ## Compatibilidade
 
 | Requisitos    | Ferramentas   |
