@@ -5,10 +5,8 @@ const mongoose = require('mongoose')
 const dotenvSafe = require('dotenv-safe')
 const cors = require('cors')
 const AWS = require('aws-sdk')
-const fs = require('fs')
-const path = require('path')
 
-const PORT = process.env.port || 3000
+const PORT = process.env.PORT || 3000
 
 dotenvSafe.config()
 
