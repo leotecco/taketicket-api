@@ -23,10 +23,12 @@ exports.register = async (data) => {
 
   return {
     person: {
+      id: person._id,
       name: person.name,
       email: person.email,
       cpf: person.cpf,
       cnpj: person.cnpj,
+      fantasyName: person.fantasyName,
       type: person.type
     },
   }
@@ -45,7 +47,8 @@ exports.login = async (data) => {
 
   return {
     person: {
-      id: person.id,
+      id: person._id,
+      name: person.name,
       email: person.email,
       cpf: person.cpf,
       cnpj: person.cnpj,
@@ -61,6 +64,7 @@ exports.me = async (id) => {
 
   return {
     id: person.id,
+    name: person.name,
     email: person.email,
     cpf: person.cpf,
     cnpj: person.cnpj,
