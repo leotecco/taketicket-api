@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const authRepository = require('./../../src/repositories/auth-repository')
 const dotenvSafe = require('dotenv-safe')
+const authRepository = require('./../../src/repositories/auth-repository')
 
 dotenvSafe.config()
 

@@ -1,9 +1,7 @@
-const path = require('path')
-const fs = require('fs')
 const mongoose = require('mongoose');
+const dotenvSafe = require('dotenv-safe')
 const authRepository = require('./../../src/repositories/auth-repository')
 const eventRepository = require('./../../src/repositories/event-repository')
-const dotenvSafe = require('dotenv-safe')
 
 dotenvSafe.config()
 

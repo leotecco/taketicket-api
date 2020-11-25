@@ -9,10 +9,12 @@ exports.register = async (req, res) => {
       res
         .status(201)
         .json({ message: 'Cadastrado com sucesso!', person: data.person });
+      return
     }
 
     res.status(400).json({ message: 'Já cadastrado!' });
   } catch (error) {
+    /* istanbul ignore next */
     res.status(500).json({ message: 'Erro ao cadastrar!', error });
   }
 };
@@ -33,6 +35,7 @@ exports.login = async (req, res) => {
 
     return res.status(401).json({ message: 'Email e/ou senha inválidos!' });
   } catch (error) {
+    /* istanbul ignore next */
     res.status(500).json({ message: 'Erro ao realizar login!', error });
   }
 };
@@ -48,6 +51,7 @@ exports.me = async (req, res) => {
         person,
       });
   } catch (error) {
+    /* istanbul ignore next */
     res.status(500).json({ message: 'Erro ao consultar dados!', error });
   }
 }
