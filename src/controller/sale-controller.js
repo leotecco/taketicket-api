@@ -12,7 +12,6 @@ exports.post = async (req, res) => {
       .status(201)
       .json({ message: 'Ingresso comprado com sucesso!', sale })
   } catch (error) {
-    console.log(error)
     res.status(500).json({ message: 'Erro ao comprar ingresso!', error })
   }
 }
@@ -35,7 +34,6 @@ exports.check = async (req, res) => {
       .status(201)
       .json({ message: 'Ingresso não encontrado!', check: false })
   } catch (error) {
-    console.log(error)
     res.status(500).json({ message: 'Erro ao validar ingresso!', error })
   }
 }

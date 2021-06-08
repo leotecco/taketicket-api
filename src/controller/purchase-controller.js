@@ -8,7 +8,6 @@ exports.getAll = async (req, res) => {
       .status(200)
       .json({ message: 'Compras listadas com sucesso!', purchases })
   } catch (error) {
-    console.log(error)
     res.status(500).json({ message: 'Erro ao comprar ingresso!', error })
   }
 }

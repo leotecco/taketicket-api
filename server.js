@@ -19,7 +19,7 @@ const publicEventRoutes = require('./src/routes/public-event-routes')
 const authRoutes = require('./src/routes/auth-routes')
 
 mongoose.connect(
-  'mongodb://Rafael12345:1234@cluster0-shard-00-00-7a7r3.mongodb.net:27017,cluster0-shard-00-01-7a7r3.mongodb.net:27017,cluster0-shard-00-02-7a7r3.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority',
+  'mongodb+srv://test123:test123@cluster0.7a7r3.mongodb.net/taketicket?retryWrites=true&w=majority',
   {
     useCreateIndex: true,
     useNewUrlParser: true,
