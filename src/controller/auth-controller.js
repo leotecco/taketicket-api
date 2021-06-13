@@ -8,14 +8,14 @@ exports.register = async (req, res) => {
     if (data) {
       res
         .status(201)
-        .json({ message: 'Cadastrado com sucesso!', person: data.person });
+        .json({ message: 'cadastrado com sucesso!', person: data.person });
       return
     }
 
-    res.status(400).json({ message: 'Já cadastrado!' });
+    res.status(400).json({ message: 'usuário já cadastrado!' });
   } catch (error) {
     /* istanbul ignore next */
-    res.status(500).json({ message: 'Erro ao cadastrar!', error });
+    res.status(500).json({ message: 'erro ao cadastrar!', error });
   }
 };
 

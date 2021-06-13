@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt');
 
 var personSchema = new Schema({
   name: { type: String, default: '', required: true },
-  email: { type: String, default: '', required: true, unique: [true, 'E-mail deve ser único'] },
+  email: { type: String, default: '', required: true, unique: [true, 'e-mail deve ser único'] },
+  phone: { type: String, default: '' },
   cpf: { type: String, default: '' },
   cnpj: { type: String, default: '' },
   fantasyName: { type: String, default: '' },

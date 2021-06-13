@@ -11,6 +11,7 @@ exports.register = async (data) => {
   const person = new Person({
     name: data.name,
     email: data.email,
+    phone: data.phone,
     cpf: data.cpf,
     cnpj: data.cnpj,
     fantasyName: data.fantasyName,
@@ -50,6 +51,7 @@ exports.login = async (data) => {
       id: person._id,
       name: person.name,
       email: person.email,
+      phone: person.phone,
       cpf: person.cpf,
       cnpj: person.cnpj,
       fantasyName: person.fantasyName,
@@ -66,6 +68,7 @@ exports.me = async (id) => {
     id: person.id,
     name: person.name,
     email: person.email,
+    phone: person.phone,
     cpf: person.cpf,
     cnpj: person.cnpj,
     fantasyName: person.fantasyName,
