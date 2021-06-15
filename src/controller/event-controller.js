@@ -4,7 +4,6 @@ exports.post = async (req, res) => {
   try {
     const event = await eventRepository.post({
       ...req.body,
-      image: req.file,
       person: req.person,
     });
 

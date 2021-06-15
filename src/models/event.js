@@ -9,6 +9,7 @@ const eventSchema = new Schema({
   street: { type: String, required: true },
   number: { type: String, required: true },
   image: { type: String, required: true },
+  categories: { type: Array },
   person: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Person',
