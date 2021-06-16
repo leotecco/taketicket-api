@@ -1,7 +1,7 @@
 const Event = require('./../models/event')
 
-exports.post = async ({ person, initialDate, ...data }) => {
-  const event = new Event({ ...data, initialDate: new Date(initialDate), person: person.id })
+exports.post = async ({ person, ...data }) => {
+  const event = new Event({ ...data, person: person.id })
 
   return event.save()
 }
